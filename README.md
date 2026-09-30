@@ -62,7 +62,7 @@ on:
 
 jobs:
   deploy:
-    uses: descubra-muriae/workflow-templates/.github/workflows/cd-template.yml@main
+    uses: descubra-muriae/workflow-templates/.github/workflows/cd-template.yml@v1
     secrets: inherit
 
 ```
