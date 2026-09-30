@@ -62,9 +62,12 @@ on:
 
 jobs:
   deploy:
-    uses: descubra-muriae/workflow-templates/.github/workflows/cd-template.yml@v1
+    permissions:
+      contents: read
+      packages: write
+  
+    uses: descubra-muriae/workflow-templates/.github/workflows/cd-template.yml@main
     secrets: inherit
-
 ```
 
 > 💡 **Como funciona o `secrets: inherit`?**
