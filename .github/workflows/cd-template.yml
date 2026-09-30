@@ -46,8 +46,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ steps.string_case.outputs.lowercase }}:latest
-            ${{ steps.string_case.outputs.lowercase }}:${{ github.sha }}
+            ghcr.io/${{ steps.string_case.outputs.lowercase }}:latest
+            ghcr.io/${{ steps.string_case.outputs.lowercase }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
