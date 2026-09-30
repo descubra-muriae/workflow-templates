@@ -5,11 +5,11 @@ on:
   workflow_call:
     secrets:
       COOLIFY_WEBHOOK:
-        description: 'URL do Webhook do Coolify (é único por projeto)'
+        description: 'URL do Webhook do Coolify (possui uma flag única por projeto)'
         required: true
       COOLIFY_TOKEN:
-        description: 'Bearer Token do Coolify (pode ser herdado da organização, caso o deploy seja no servidor padrão)'
-        required: false
+        description: 'Bearer Token do Coolify'
+        required: true
 
 jobs:
   build-and-deploy:
