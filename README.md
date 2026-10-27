@@ -23,15 +23,18 @@ O template central (`cd-template.yml`) executa os seguintes passos automaticamen
 
 ## 📋 Pré-requisitos (Configuração por Repositório)
 
-Devido às limitações do plano *GitHub Free for Organizations*, as **Secrets** de deploys em repositórios privados precisam ser cadastradas diretamente na aba de configurações de cada repositório.
+Devido às limitações do plano *GitHub Free for Organizations*, as **Secrets** de deploy em repositórios privados precisam ser cadastradas diretamente na aba de configurações do repositório da sua aplicação.
 
-Antes de utilizar a pipeline no seu projeto, acesse **Settings > Secrets and variables > Actions > New repository secret** do repositório da sua aplicação e cadastre:
+Antes de utilizar a pipeline, acesse **Settings > Secrets and variables > Actions > New repository secret** no seu repositório no GitHub e cadastre:
 
 | Secret | Descrição | Obrigatório? |
 | --- | --- | --- |
-| `COOLIFY_WEBHOOK` | URL do Webhook do app correspondente dentro do Coolify. | **Sim** |
-| `COOLIFY_TOKEN` | Bearer Token de autenticação da API do Coolify. | **Sim** |
-| `CF_BYPASS_HEADER_TOKEN` | Token do header `x-cf-bypass-token` para o WAF da Cloudflare. | Opcional |
+| `COOLIFY_WEBHOOK` | URL do Webhook da aplicação correspondente gerado no Coolify. | **Sim** |
+| `COOLIFY_TOKEN` | Bearer Token de API do Coolify. Deve ser criado especificamente para este projeto no painel do Coolify (**Keys & Tokens > API Tokens**). | **Sim** |
+| `CF_BYPASS_HEADER_TOKEN` | Token do header `x-cf-bypass-token` para bypass de regras no WAF da Cloudflare. | Opcional |
+
+> 💡 **Como obter o `COOLIFY_TOKEN`:**  
+> No painel do Coolify, vá em **Keys & Tokens** > **API Tokens**, crie um token dedicado para a integração do projeto (apenas com a permissão de `deploy`) e copie o valor gerado.
 
 ---
 
